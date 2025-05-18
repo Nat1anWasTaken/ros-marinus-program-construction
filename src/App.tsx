@@ -2,7 +2,7 @@ import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [countdown, setCountdown] = useState<number>(10);
+  const [countdown, setCountdown] = useState<number>(11);
   const imgUrl = `${import.meta.env.BASE_URL}/ros-marinus.png`;
 
   useEffect(() => {
@@ -21,9 +21,18 @@ function App() {
 
   useEffect(() => {
     if (countdown <= 0) {
-      window.location.href = "https://youtu.be/dQw4w9WgXcQ";
+      window.location.href = "https://www.youtube.com/watch?v=FoO7Pmx0bE4";
     }
   }, [countdown]);
+
+  let countdownText = "";
+  if (countdown > 6) {
+    countdownText = "你可以離開這個頁面了";
+  } else if (countdown <= 5) {
+    countdownText = `我說你可以離開這個頁面了，你還有 ${countdown} 秒`;
+  } else if (countdown <= 1) {
+    countdownText = "呀哩呀哩，攔不住的大小姐";
+  }
 
   return (
     <>
@@ -39,9 +48,7 @@ function App() {
         <Heading>節目冊目前還在構建中</Heading>
         <Text>請 5/24 當天再掃一次這個 QR Code</Text>
         <Text color={"fg.subtle"} fontSize={"sm"}>
-          {countdown < 5
-            ? `我說你可以離開這個頁面了，你還有 ${countdown} 秒`
-            : `你現在可以離開這個頁面了`}
+          {countdownText}
         </Text>
       </Flex>
     </>
