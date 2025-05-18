@@ -26,7 +26,7 @@ function App() {
   }, [countdown]);
 
   let countdownText = "";
-  if (countdown > 6) {
+  if (countdown >= 6) {
     countdownText = "你可以離開這個頁面了";
   } else if (countdown <= 5 && countdown > 1) {
     countdownText = `我說你可以離開這個頁面了，你還有 ${countdown} 秒`;
