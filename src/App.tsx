@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [countdown, setCountdown] = useState<number>(10);
-  const imgUrl = `${import.meta.env.BASE_URL}ros-marinus.png`;
+  const imgUrl = `${import.meta.env.BASE_URL}/ros-marinus.png`;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
