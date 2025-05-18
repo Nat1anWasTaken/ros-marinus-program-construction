@@ -28,9 +28,9 @@ function App() {
   let countdownText = "";
   if (countdown >= 6) {
     countdownText = "你可以離開這個頁面了";
-  } else if (countdown <= 5 && countdown > 1) {
+  } else if (countdown <= 5 && countdown > 0) {
     countdownText = `我說你可以離開這個頁面了，你還有 ${countdown} 秒`;
-  } else if (countdown <= 1) {
+  } else if (countdown === 0) {
     countdownText = "呀哩呀哩，攔不住的大小姐";
   }
 
