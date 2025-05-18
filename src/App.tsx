@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [countdown, setCountdown] = useState<number>(10);
+  const imgUrl = `${import.meta.env.BASE_URL}ros-marinus.png`;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -22,7 +23,7 @@ function App() {
     if (countdown <= 0) {
       window.location.href = "https://youtu.be/dQw4w9WgXcQ";
     }
-  }, [countdown]); // Add countdown as a dependency
+  }, [countdown]);
 
   return (
     <>
@@ -34,7 +35,7 @@ function App() {
         h={"full"}
         gap={4}
       >
-        <Image src={"/ros-marinus.png"} maxW={{ base: "90%", md: "72" }} />
+        <Image src={imgUrl} maxW={{ base: "90%", md: "72" }} />
         <Heading>節目冊目前還在構建中</Heading>
         <Text>請 5/24 當天再掃一次這個 QR Code</Text>
         <Text color={"fg.subtle"} fontSize={"sm"}>
